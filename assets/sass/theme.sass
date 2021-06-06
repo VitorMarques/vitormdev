@@ -1,11 +1,43 @@
+@use "colors"
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap')
+
 html
-  font-family: Raleway, Roboto, serif
+  font-family: Raleway, serif
   font-size: 16px
 
 body
   margin: 0
+  min-height: 100vh
+  display: flex
+  flex-direction: column
 
 a
   margin: 0
   padding: 0
   text-decoration: none
+
+.container-full-width
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+
+.container
+  width: 71.25rem
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  &-content
+    margin: 1rem
+
+h1
+  font-family: "PT Sans", serif
+  font-weight: bolder
+  font-size: 2rem
+  color: colors.$title-text-color
+
+  a
+    color: colors.$title-text-color
+

@@ -1,25 +1,36 @@
 <template>
   <div>
-    <header class="header">
-      <div class="header-container">
-        <div class="logo">
-          <a href="/">
+    <header class="header container-full-width">
+      <div class="container">
+        <div class="header__logo">
+          <nuxt-link to="/">
             <img src="@/assets/img/vitormdev-logo.png" alt="vitormdev-logo" />
-          </a>
+          </nuxt-link>
         </div>
-        <div class="header-container__navigation">
+        <div class="header__navigation">
           <ul>
-            <li><a href="/javascript">javascript</a></li>
-            <li><a href="/node">node</a></li>
-            <li><a href="/vuejs">vuejs</a></li>
-            <li><a href="/css">css</a></li>
-            <li><a href="/sass">sass</a></li>
+            <li><nuxt-link to="/javascript">javascript</nuxt-link></li>
+            <li><nuxt-link to="/node">node</nuxt-link></li>
+            <li><nuxt-link to="/vuejs">vuejs</nuxt-link></li>
+            <li><nuxt-link to="/css">css</nuxt-link></li>
+            <li><nuxt-link to="/sass">sass</nuxt-link></li>
           </ul>
         </div>
       </div>
     </header>
-    <Nuxt />
-    <footer></footer>
+    <div class="container-full-width">
+      <Nuxt
+        :key="$route.fullPath"
+        keep-alive
+        :keep-alive-props="{ max: 20 }"
+        class="container"
+      />
+    </div>
+    <footer class="footer container-full-width">
+      <div class="container">
+        <p>Desenvolvido com Nuxt e com ❤️ por Vitor Marques</p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -27,25 +38,22 @@
 @use "assets/sass/colors"
 
 .header
-  display: flex
-  justify-content: center
-  align-items: center
   background-color: colors.$secondary-color
   height: 3.4rem
+  //border-top: 2px solid colors.$primary-color
 
-  &-container
-    width: 1140px
+  &__navigation > ul
+    list-style: none
     display: flex
-    justify-content: space-between
-    align-items: center
+    flex-direction: row
+    li
+      margin: 1rem
+      a
+        color: colors.$background-color
+        font-weight: bold
 
-    &__navigation > ul
-      list-style: none
-      display: flex
-      flex-direction: row
-      li
-        margin: 1rem
-        a
-          color: colors.$background-color
-          font-weight: 400
+.footer
+  display: flex
+  flex-direction: column-reverse
+  margin: 1.2rem 0
 </style>
