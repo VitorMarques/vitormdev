@@ -3,19 +3,11 @@
     <header class="header container-full-width">
       <div class="container">
         <div class="header__logo">
-          <nuxt-link to="/">
-            <img src="@/assets/img/vitormdev-logo.png" alt="vitormdev-logo" />
-          </nuxt-link>
+          <h2>
+            <nuxt-link to="/"> >_vitorm.dev </nuxt-link>
+          </h2>
         </div>
-        <div class="header__navigation">
-          <ul>
-            <li><nuxt-link to="/javascript">javascript</nuxt-link></li>
-            <li><nuxt-link to="/node">node</nuxt-link></li>
-            <li><nuxt-link to="/vuejs">vuejs</nuxt-link></li>
-            <li><nuxt-link to="/css">css</nuxt-link></li>
-            <li><nuxt-link to="/sass">sass</nuxt-link></li>
-          </ul>
-        </div>
+        <header-navigation :tag="activeTag" />
       </div>
     </header>
     <div class="container-full-width">
@@ -46,14 +38,30 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      activeTag: '',
+    }
+  },
+  watch: {
+    $route() {
+      this.activeTag = this.$route.path.split('/')[1]
+    },
+  },
+}
+</script>
+
 <style lang="sass">
 @use "assets/sass/colors"
 
 .header
-  background-color: colors.$secondary-color
+  border-top: 8px solid colors.$secondary-color
   height: 3.4rem
-  //border-top: 2px solid colors.$primary-color
-
+  margin-bottom: 1rem
+  a
+    color: colors.$secondary-color
   &__navigation > ul
     list-style: none
     display: flex
@@ -61,7 +69,7 @@
     li
       margin: 1rem
       a
-        color: colors.$background-color
+        color: colors.$secondary-color
         font-weight: bold
 
 .footer

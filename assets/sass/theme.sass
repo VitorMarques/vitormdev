@@ -55,6 +55,17 @@ h1
 .tag-vuejs
   background-color: colors.$vuejs
 
+.text-css
+  color: colors.$css !important
+.text-javascript
+  color: colors.$javascript !important
+.text-node
+  color: colors.$node !important
+.text-sass
+  color: colors.$sass !important
+.text-vuejs
+  color: colors.$vuejs !important
+
 .page-enter-active,
 .page-leave-active
   transition: opacity 0.5s
@@ -62,3 +73,11 @@ h1
 .page-enter,
 .page-leave-to
   opacity: 0
+
+.nuxt-content-highlight
+  pre
+    border-radius: 4px
+    border-left: 4px solid colors.$primary-color
+
+    code
+      font-size: 18px
