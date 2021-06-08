@@ -3,7 +3,7 @@
     <div class="profile">
       <img
         class="profile-image"
-        src="@/assets/img/profile-picture.JPG"
+        src="@/assets/img/eu-profile.jpeg"
         alt="vitorm-perfil"
       />
       <div class="profile-description">
