@@ -7,7 +7,7 @@
             <nuxt-link to="/"> >_vitorm.dev </nuxt-link>
           </h2>
         </div>
-        <header-navigation :tag="activeTag" />
+        <header-navigation :key="activeTag" :tag="activeTag" />
       </div>
     </header>
     <div class="container-full-width">

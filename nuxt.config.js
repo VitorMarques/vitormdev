@@ -10,7 +10,14 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=PT+Serif&display=swap',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -41,6 +48,7 @@ export default {
         theme: 'prism-themes/themes/prism-material-oceanic.css',
       },
     },
+    fullTextSearchFields: ['title', 'description', 'tag'],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
