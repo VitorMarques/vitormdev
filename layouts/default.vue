@@ -21,7 +21,7 @@
           ❤️ por Vitor Marques
         </p>
         <ul>
-          <li><nuxt-link to="/sobre-mim">sobre mim</nuxt-link></li>
+          <li><nuxt-link to="/about">sobre mim</nuxt-link></li>
           <li>
             <a href="https://github.com/VitorMarques" target="_blank">github</a>
           </li>

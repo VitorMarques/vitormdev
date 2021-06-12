@@ -42,6 +42,7 @@ export default {
     try {
       const articles = await $content({ deep: true })
         .only(['title', 'description', 'createdAt', 'tag'])
+        .where({ title: { $ne: 'about-me' } })
         .sortBy('createdAt', 'desc')
         .limit(15)
         .fetch()
